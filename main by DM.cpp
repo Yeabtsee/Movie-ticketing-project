@@ -140,7 +140,7 @@ int main() {
     // Load seat reservation status from a file
     readSeatStatus(seatStatus, numMovies);
 
-    displayMovies(movies, numMovies);
+    
     cout<< "\t\t\tWELCOME TO CINEBOOK" <<endl;
     int userChoice;
     cout << "What would you like to do?" << endl;
