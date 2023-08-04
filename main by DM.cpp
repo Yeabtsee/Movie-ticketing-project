@@ -191,7 +191,7 @@ int main() {
                     cout << "Invalid movie number!" << endl;
                 }
             }else{
-                cout<<"Thanks for using our system!!";
+                cout<<"Thanks for using CINEBOOK!!";
             }
             break;
         case 2:
