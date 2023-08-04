@@ -24,9 +24,9 @@ struct SeatStatus {
 // Function to initialize movie data
 void initializeMovies(Movie movies[], int numMovies) {
     // Add movie data as needed
-    movies[0] = { "Movie 1", "10:00 AM", 10.0 };
-    movies[1] = { "Movie 2", "1:00 PM", 12.0 };
-    movies[2] = { "Movie 3", "4:00 PM", 15.0 };
+    movies[0] = { "Barbie", "10:00 AM", 10.0 };
+    movies[1] = { "Oppenheimer", "1:00 PM", 12.0 };
+    movies[2] = { "Insidious: The Red Door", "4:00 PM", 15.0 };
 }
 
 // Function to display available movies and their details
