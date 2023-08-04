@@ -132,7 +132,7 @@ void displayTotalRevenue(const SeatStatus seatStatus[][MAX_SEATS], const Movie m
 int main() {
     Movie movies[MAX_MOVIES];
     int numMovies = 3; // Number of available movies
-
+    string reserveChoice;
     SeatStatus seatStatus[MAX_MOVIES][MAX_SEATS];
 
     initializeMovies(movies, numMovies);
@@ -154,6 +154,45 @@ int main() {
     switch (userChoice) {
         case 1:
             displayMovies(movies, numMovies);
+            cout << "Do you want to reserve a seat? (y/n): ";
+            cin >> reserveChoice;
+            if (reserveChoice == "y"||reserveChoice == "Y") {
+                // Reservation process
+                int movieIndex, seatNumber, numTickets;
+                cout << "Enter the movie number: ";
+                cin >> movieIndex;
+                movieIndex--; // Adjusting to 0-based index
+
+                if (movieIndex >= 0 && movieIndex < numMovies) {
+                    cout << "Enter the first seat number (1-" << MAX_SEATS << "): ";
+                    cin >> seatNumber;
+                    seatNumber--; // Adjusting to 0-based index
+
+                    if (seatNumber >= 0 && seatNumber < MAX_SEATS) {
+                        cout << "Enter the number of tickets to reserve: ";
+                        cin >> numTickets;
+
+                        if (seatNumber + numTickets <= MAX_SEATS &&
+                            checkSeatAvailability(seatStatus, movieIndex, seatNumber)) {
+                            double totalPrice = calculateTotalPrice(movies[movieIndex].price, numTickets);
+                            cout << "Total price: $" << totalPrice << endl;
+
+                            reserveSeats(seatStatus, movieIndex, seatNumber, numTickets);
+
+                            // Save seat reservation status to a file
+                            writeSeatStatus(seatStatus, numMovies);
+                        } else {
+                            cout << "Invalid seat number or the seats are already reserved." << endl;
+                        }
+                    } else {
+                        cout << "Invalid seat number!" << endl;
+                    }
+                } else {
+                    cout << "Invalid movie number!" << endl;
+                }
+            }else{
+                cout<<"Thanks for using our system!!";
+            }
             break;
         case 2:
             int movieIndex, seatNumber, numTickets;
