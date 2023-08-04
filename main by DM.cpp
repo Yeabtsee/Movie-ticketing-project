@@ -195,6 +195,7 @@ int main() {
             }
             break;
         case 2:
+            displayMovies(movies, numMovies);
             int movieIndex, seatNumber, numTickets;
             cout << "Enter the movie number: ";
             cin >> movieIndex;
