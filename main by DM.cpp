@@ -107,7 +107,7 @@ void resetAllSeats(SeatStatus seatStatus[][MAX_SEATS], int numMovies) {
             seatStatus[i][j].isReserved = false;
         }
     }
-    cout << "Daily Revenue have been reseted to $0 and all seats have been reset to available!" << endl;
+    cout << "Daily Revenue has been reset to $0 and all seats have been reset to available!" << endl;
 }
 
 // Function to authenticate the ticket manager
@@ -126,8 +126,15 @@ bool authenticateManager() {
 
 void displayTotalRevenue(const SeatStatus seatStatus[][MAX_SEATS], const Movie movies[], int numMovies) {
     double totalRevenue = calculateTotalRevenue(seatStatus, movies, numMovies);
-    cout << "Total Revenue: $" << totalRevenue << endl;
+    cout << "Total Revenue of the day: $" << totalRevenue << endl;
+ 
+    ofstream outputFile("total_revenue.txt");
+    if (outputFile.is_open()) {
+        outputFile << totalRevenue;
+        outputFile.close();
+    }
 }
+
 
 int main() {
     Movie movies[MAX_MOVIES];
@@ -146,7 +153,7 @@ int main() {
     cout << "What would you like to do?" << endl;
     cout << "1. Check available movies" << endl;
     cout << "2. Reserve seats" << endl;
-    cout << "3. Total Revenue (For Ticket Managers Only)" << endl;
+    cout << "3. Total Revenue of the day (For Ticket Managers Only)" << endl;
     cout << "4. Reset All Seats and Daily Revenue (For Ticket Managers Only)" << endl;
     cout << "Enter your choice: ";
     cin >> userChoice;
