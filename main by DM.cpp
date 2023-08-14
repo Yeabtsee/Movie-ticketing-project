@@ -83,7 +83,7 @@ double calculateTotalPrice(double ticketPrice, int numTickets) {
     return ticketPrice * numTickets;
 }
 
-// Function to calculate total revenue based on the number of tickets reserved for each movie
+// Function to calculate total revenue(income) based on the number of tickets reserved for each movie
 double calculateTotalRevenue(const SeatStatus seatStatus[][MAX_SEATS], const Movie movies[], int numMovies) {
     double totalRevenue = 0.0;
 
