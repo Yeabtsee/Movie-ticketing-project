@@ -128,9 +128,9 @@ void displayTotalRevenue(const SeatStatus seatStatus[][MAX_SEATS], const Movie m
     double totalRevenue = calculateTotalRevenue(seatStatus, movies, numMovies);
     cout << "Total Revenue of the day: $" << totalRevenue << endl;
  
-    ofstream outputFile("total_revenue.txt");
+    ofstream outputFile("total_revenue.txt", ios::ate | ios::app);
     if (outputFile.is_open()) {
-        outputFile << totalRevenue;
+        outputFile << totalRevenue <<endl;
         outputFile.close();
     }
 }
@@ -155,7 +155,7 @@ int main() {
     cout << "2. Reserve seats" << endl;
     cout << "3. Total Revenue of the day (For Ticket Managers Only)" << endl;
     cout << "4. Reset All Seats and Daily Revenue (For Ticket Managers Only)" << endl;
-    cout << "Enter your choice: ";
+    cout << "Enter the number of your choice: ";
     cin >> userChoice;
 
     switch (userChoice) {
