@@ -1,4 +1,8 @@
 # Movie-ticketing-project
-This is a Fundamentals of Programming two(ll) project. It is a platform where by customers and managers are going to access a feasible movie booking system.
-1, For users/customers, the program will allow them to check available movies streaming that matches their schedule and then can book their seats and how many tickets they want.
-2, As for the managers, the program will allow them to collect the revenue of the day and finally reset the availability of the seats and the generated revenue when the work day terminates.
+This project aims to create a movie booking system that can be accessed by both customers and managers. The system will have two main functionalities: one for customers and one for managers.
+
+For customers, the program will provide a user-friendly interface where they can check the available movies that are currently streaming. The system will display the movies along with their showtimes, allowing customers to choose a movie that matches their schedule. Once they have selected a movie, they can proceed to book their seats. The program will show a seating layout for the chosen movie, indicating which seats are available and which are already booked. Customers can then select the number of tickets they want and choose their desired seats. After confirming their booking, the program will update the seating availability accordingly.
+
+For managers, the program will provide administrative features. They will have access to a revenue collection function, which allows them to keep track of the total revenue generated for the day. This function will automatically calculate the total revenue based on the number of tickets sold and the price of each ticket. Additionally, at the end of the workday, the program will provide a reset function that will reset the availability of seats and the generated revenue. This allows the system to start fresh for the next day of operation.
+
+Overall, this movie booking system provides a convenient platform for customers to check movie availability and book their seats, while also providing managers with tools to track revenue and manage the system on a daily basis.
